@@ -59,7 +59,7 @@ fronthem_Time($$)
 	my @periods = split(' ', $period);  # split parameters like "1y 3m 5d 10h" into an array like ("1y","3m","5d","10h")
 	foreach my $period (@periods) 	    # loop over the individual array elements
 	{
-		if ($period =~ /^(\d{1,4})(s|i|h|d|w|m|y)/)
+		if ($period =~ /^([-+]?\d{1,4})(s|i|h|d|w|m|y)/)
 		{
 			my $newTime = 0;
 			if ($2 eq "s")
@@ -90,7 +90,7 @@ fronthem_Time($$)
 			{
 				$newTime = $1 * 3600 * 24 * 365;
 			}
-			$time = $time - $newTime;
+			$time -= $newTime;
 		}
 	}
 	return $time;
