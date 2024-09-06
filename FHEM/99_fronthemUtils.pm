@@ -182,7 +182,7 @@ sub UZSU_execute($$;$)
 			my $delayedExec = UZSU_getCommand($uzsu->{list}[$i]{delayedExec});
 						
 			fhem('defmod wdt_uzsu_' . $device . '_' . $i . ' WeekdayTimer ' . $device . ' en ' . $weekdayTimer . $condition);
-			fhem('attr wdt_uzsu_' . $device . '_' . $i . ' room UZSU');
+			fhem('attr wdt_uzsu_' . $device . '_' . $i . ' room Automation->UZSU');
 			fhem('attr wdt_uzsu_' . $device . '_' . $i . ' group ' . $device);
 			fhem('setreading wdt_uzsu_' . $device . '_' . $i . ' weekdays ' . $weekdayTimer);
 			fhem('defmod rg_uzsu_' . $device . ' readingsgroup wdt_uzsu_' . $device . '.*');
