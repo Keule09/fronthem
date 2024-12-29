@@ -186,7 +186,7 @@ sub UZSU_execute($$;$)
 			fhem('attr wdt_uzsu_' . $device . '_' . $i . ' group ' . $device);
 			fhem('setreading wdt_uzsu_' . $device . '_' . $i . ' weekdays ' . $weekdayTimer);
 			fhem('defmod rg_uzsu_' . $device . ' readingsgroup wdt_uzsu_' . $device . '.*');
-			fhem('attr rg_uzsu_' . $device . ' room UZSU');
+			fhem('attr rg_uzsu_' . $device . ' room Automation->UZSU');
 			if ($delayedExec) {
 				fhem('attr wdt_uzsu_' . $device . '_' . $i . ' delayedExecutionCond ' . $delayedExec);
 			}
